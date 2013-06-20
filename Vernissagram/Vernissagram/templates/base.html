@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="{{ STATIC_URL }}css/base.css" rel="stylesheet" media="screen">
     {% block head %}{% endblock head %}
   </head>
   <body>
@@ -21,13 +22,15 @@
     <div class="container">
         {% block container %}
         {% endblock container %}
+        
+        <div id="footer" class="row">
+            <div class="span12">
+                Made with webcurious love by Me.
+            </div>
+        </div>
     </div>
-    <div id="footer">
-        Made with webcurious love by Me.
-    </div>
-    
-    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
     <script src="{{ STATIC_URL }}js/jQuery.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
     {% block scripts %}
     {% endblock scripts %}
   </body>

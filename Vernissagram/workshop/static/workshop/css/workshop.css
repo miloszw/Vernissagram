@@ -1,0 +1,16 @@
+#rbox {
+    width: 400px;
+    height: 160px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#lbox {
+    display: inline-block;
+}
+
+#tabs {
+    height: 150px;
+    overflow: scroll;
+    padding-left: 5px;
+}

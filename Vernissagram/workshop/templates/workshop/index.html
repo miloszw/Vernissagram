@@ -1,15 +1,48 @@
 {% extends 'base.html' %}
 {% block head %}
-    <link href="{{ STATIC_URL }}workshop/css/base.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}workshop/css/workshop.css" rel="stylesheet">
 {% endblock head %}
 
 {% block container %}
+<div class="row">
+    <ul class="breadcrumb">
+        <li>Step 1<span class="divider">/</span></li>
+        <li>Step 2<span class="divider">/</span></li>
+        <li>Step 3<span class="divider"></span></li>
+    </ul>
+</div>
     <div class="row">
         <div class="span8">
-            <div class="pull-left"><img alt="" class="img-polaroid" data-src="holder.js/160x160"></div>
-            <div class="pull-right"><img alt="" class="img-polaroid" data-src="holder.js/400x160"></div>
+            <div id="lbox"><img alt="" class="img-polaroid" data-src="holder.js/200x200"></div>
+            <div id="rbox">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab1" data-toggle="tab">Choose from gallery</a></li>
+                    <li><a href="#tab2" data-toggle="tab">Upload</a></li>
+                </ul>
+                <div id="tabs" class="tab-content">
+                    <div class="tab-pane active" id="tab1">
+                        <ul class="thumbnails">
+                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
+                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
+                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
+                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
+                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
+                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
+                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
+                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
+                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
+                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" id="tab2">
+                        Upload a new picture.
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="span4"><p class="lead">Help</p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, quod, porro, itaque laboriosam et fugit eveniet facere voluptatum sed nihil ea ipsum aspernatur. Dolore sapiente ut odio adipisci odit laborum.</div>
+        <div class="span4">
+            <p class="lead">Help</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, quod, porro, itaque laboriosam et fugit eveniet facere voluptatum sed nihil ea ipsum aspernatur. Dolore sapiente ut odio adipisci odit laborum.</p>
+        </div>
     </div>
 {% endblock %}
 
