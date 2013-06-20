@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
+{% block head %}
+    <link href="{{ STATIC_URL }}workshop/css/base.css" rel="stylesheet">
+{% endblock head %}
 
-{% block body %}
-    Hi world.
+{% block container %}
+    <div class="row">
+        <div class="span8">
+            <div class="pull-left"><img alt="" class="img-polaroid" data-src="holder.js/160x160"></div>
+            <div class="pull-right"><img alt="" class="img-polaroid" data-src="holder.js/400x160"></div>
+        </div>
+        <div class="span4"><p class="lead">Help</p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, quod, porro, itaque laboriosam et fugit eveniet facere voluptatum sed nihil ea ipsum aspernatur. Dolore sapiente ut odio adipisci odit laborum.</div>
+    </div>
 {% endblock %}
+
+{% block scripts %}
+    <script src="{{ STATIC_URL }}js/holder.js"></script>
+{% endblock scripts %}
