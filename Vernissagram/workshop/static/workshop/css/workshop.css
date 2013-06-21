@@ -14,3 +14,31 @@
     overflow: scroll;
     padding-left: 5px;
 }
+
+.tab-content {
+    position: relative;
+}
+
+.center-ul ul {
+    text-align: center;
+    margin: 0 !important;
+}
+
+.center-ul ul li {
+    list-style: none;
+    display: inline;
+}
+
+form input:not(#btn-submit) {
+    width: 275px !important;
+    padding-left: 0;
+}
+
+form #btn-submit {
+    width: 285px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}

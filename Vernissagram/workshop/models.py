@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 
 # Create your models here.
 class Author(models.Model):
@@ -17,5 +18,5 @@ class Media(models.Model):
     image = models.ImageField(upload_to='%Y/%m')
     pub_date = models.DateTimeField('date published', auto_now_add=True)
     author = models.ForeignKey(Author, default=Author.get_guest)
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag, blank=True)
     likes = models.IntegerField(default=0)

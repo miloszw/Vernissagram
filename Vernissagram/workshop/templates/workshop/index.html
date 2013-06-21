@@ -20,7 +20,7 @@
                     <li><a href="#tab2" data-toggle="tab">Upload</a></li>
                 </ul>
                 <div id="tabs" class="tab-content">
-                    <div class="tab-pane active" id="tab1">
+                    <div class="tab-pane active center-ul" id="tab1">
                         <ul class="thumbnails">
                             <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
                             <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
@@ -35,7 +35,15 @@
                         </ul>
                     </div>
                     <div class="tab-pane" id="tab2">
-                        Upload a new picture.
+                        <form action="/upload/" method="post" enctype="multipart/form-data" class="center-ul">
+                            <ul>
+                                <li>{# <label for="id_title">Title:</label> #}<input id="id_title" maxlength="200" name="title" type="text" placeholder="Image title" /></li>
+                                <li>{# <label for="id_image">Image:</label> #}<input id="id_image" name="image" type="file" accept="image/x-png, image/jpeg" /></li>
+                                {# <li><label for="id_author">Author:</label></li> #}
+                                {# <li><label for="id_tags">Tags:</label></li> #}
+                                <li><input type="submit" id="btn-submit" value="Upload" class="btn btn-primary btn-small"></li>
+                            </ul>
+                        </form>
                     </div>
                 </div>
             </div>
