@@ -6,14 +6,17 @@
 {% block container %}
 <div class="row">
     <ul class="breadcrumb">
-        <li>Step 1<span class="divider">/</span></li>
+        <li class="active">Step 1<span class="divider">/</span></li>
         <li>Step 2<span class="divider">/</span></li>
         <li>Step 3<span class="divider"></span></li>
     </ul>
 </div>
     <div class="row">
         <div class="span8">
-            <div id="lbox"><img id="img-large" class="img-polaroid" data-src="holder.js/200x200"></div>
+            <div id="lbox">
+                <img id="img-large" class="img-polaroid" data-src="holder.js/200x200">
+                <a href="#" id="ok-btn" class="btn btn-success"><i class="icon-ok icon-white"></i> Choose picture</a>
+            </div>
             <div id="rbox">
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#tab1" data-toggle="tab">Choose from gallery</a></li>
@@ -23,7 +26,7 @@
                     <div class="tab-pane active center-ul" id="tab1">
                         <ul class="thumbnails">
                             {% for media_file in media_list %}
-                                <li><a href="#" class="{# thumbnail #}"><img src="{{ MEDIA_URL }}{{ media_file.image.name }}"></a></li>
+                                <li><a href="#"><img class="grayscale" src="{{ MEDIA_URL }}{{ media_file.image.name }}"></a></li>
                             {% endfor %}
                         </ul>
                     </div>

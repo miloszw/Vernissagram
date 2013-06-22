@@ -14,15 +14,28 @@
     height: 200px;
 }
 
+#lbox #ok-btn {
+    position: relative;
+    width: 140px;
+    bottom: 61px;
+    margin: 0 auto;
+    display: block;
+}
+
 #tabs {
     height: 150px;
     overflow: scroll;
     padding-left: 5px;
 }
 
+.grayscale {
+    -webkit-filter: grayscale(0.8);
+}
+
 .highlighted {
     box-shadow: 0 0 10px rgba(281, 203, 138, 1);
-    border: 1px solid rgba(81, 203, 38, 1);
+    border: 3px solid rgba(81, 203, 38, 1);
+    margin-top: -3px;
 }
 
 .thumbnails a {
@@ -34,8 +47,8 @@ ul.thumbnails {
 }
 
 .thumbnails li {
-    height: 62px;
-    width: 62px;
+    height: 70px;
+    width: 70px;
 }
 
 .thumbnails img {

@@ -2,3 +2,4 @@
 
 * Ajax upload + jQuery progress bar
 * Sticky footer
+* Drop picture onto #img-large -> start upload, switch tab
