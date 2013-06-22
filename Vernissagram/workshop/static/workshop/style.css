@@ -9,10 +9,38 @@
     display: inline-block;
 }
 
+#lbox #img-large {
+    width: 200px;
+    height: 200px;
+}
+
 #tabs {
     height: 150px;
     overflow: scroll;
     padding-left: 5px;
+}
+
+.highlighted {
+    box-shadow: 0 0 10px rgba(281, 203, 138, 1);
+    border: 1px solid rgba(81, 203, 38, 1);
+}
+
+.thumbnails a {
+    padding: 0;
+}
+
+ul.thumbnails {
+    padding-top: 5px;
+}
+
+.thumbnails li {
+    height: 62px;
+    width: 62px;
+}
+
+.thumbnails img {
+    height: 60px;
+    width: 60px;
 }
 
 .tab-content {

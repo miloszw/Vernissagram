@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block head %}
-    <link href="{{ STATIC_URL }}workshop/css/workshop.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}workshop/style.css" rel="stylesheet">
 {% endblock head %}
 
 {% block container %}
@@ -13,7 +13,7 @@
 </div>
     <div class="row">
         <div class="span8">
-            <div id="lbox"><img alt="" class="img-polaroid" data-src="holder.js/200x200"></div>
+            <div id="lbox"><img id="img-large" class="img-polaroid" data-src="holder.js/200x200"></div>
             <div id="rbox">
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#tab1" data-toggle="tab">Choose from gallery</a></li>
@@ -22,16 +22,9 @@
                 <div id="tabs" class="tab-content">
                     <div class="tab-pane active center-ul" id="tab1">
                         <ul class="thumbnails">
-                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
-                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
-                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
-                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
-                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
-                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
-                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
-                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
-                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
-                            <li><a href="#" class="thumbnail"><img alt="" data-src="holder.js/60x60"></a></li>
+                            {% for media_file in media_list %}
+                                <li><a href="#" class="{# thumbnail #}"><img src="{{ MEDIA_URL }}{{ media_file.image.name }}"></a></li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <div class="tab-pane" id="tab2">
@@ -56,4 +49,5 @@
 
 {% block scripts %}
     <script src="{{ STATIC_URL }}js/holder.js"></script>
+     <script src="{{ STATIC_URL }}workshop/scripts.js"></script>
 {% endblock scripts %}

@@ -1,0 +1,4 @@
+##### TODO #####
+
+* Ajax upload + jQuery progress bar
+* Sticky footer
