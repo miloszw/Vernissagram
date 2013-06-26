@@ -4,48 +4,72 @@
 {% endblock head %}
 
 {% block container %}
-<div class="row">
-    <ul class="breadcrumb">
-        <li class="active">Step 1<span class="divider">/</span></li>
-        <li>Step 2<span class="divider">/</span></li>
-        <li>Step 3<span class="divider"></span></li>
-    </ul>
-</div>
     <div class="row">
-        <div class="span8">
-            <div id="lbox">
-                <img id="img-large" class="img-polaroid" data-src="holder.js/200x200">
-                <a href="#" id="ok-btn" class="btn btn-success"><i class="icon-ok icon-white"></i> Choose picture</a>
-            </div>
-            <div id="rbox">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a href="#tab1" data-toggle="tab">Choose from gallery</a></li>
-                    <li><a href="#tab2" data-toggle="tab">Upload</a></li>
-                </ul>
-                <div id="tabs" class="tab-content">
-                    <div class="tab-pane active center-ul" id="tab1">
-                        <ul class="thumbnails">
-                            {% for media_file in media_list %}
-                                <li><a href="#"><img class="grayscale" src="{{ MEDIA_URL }}{{ media_file.image.name }}"></a></li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    <div class="tab-pane" id="tab2">
-                        <form action="/upload/" method="post" enctype="multipart/form-data" class="center-ul">
-                            <ul>
-                                <li>{# <label for="id_title">Title:</label> #}<input id="id_title" maxlength="200" name="title" type="text" placeholder="Image title" /></li>
-                                <li>{# <label for="id_image">Image:</label> #}<input id="id_image" name="image" type="file" accept="image/x-png, image/jpeg" /></li>
-                                {# <li><label for="id_author">Author:</label></li> #}
-                                {# <li><label for="id_tags">Tags:</label></li> #}
-                                <li><input type="submit" id="btn-submit" value="Upload" class="btn btn-primary btn-small"></li>
+        <ul class="breadcrumb">
+            <li id="step1" class="active">Step 1<span class="divider">/</span></li>
+            <li id="step2">Step 2<span class="divider">/</span></li>
+            <li id="step3">Step 3<span class="divider"></span></li>
+        </ul>
+    </div>
+    <div id="mainContainer" class="row">
+        <div id="lbox">
+            <img id="img-large" class="img-polaroid" data-src="holder.js/300x300">
+            <a href="#" id="ok-btn" class="btn btn-success"><i class="icon-ok icon-white"></i> Choose picture</a>
+        </div>
+        <div id="rightRow">
+            <div id="step1">
+                <div id="rbox">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1" data-toggle="tab">Choose from gallery</a></li>
+                        <li><a href="#tab2" data-toggle="tab">Upload new picture</a></li>
+                    </ul>
+                    <div id="tabs" class="tab-content">
+                        <div class="tab-pane active center-ul" id="tab1">
+                            <ul class="thumbnails">
+                                {% for media_file in media_list %}
+                                    <li><a href="#"><img class="grayscale" src="{{ MEDIA_URL }}{{ media_file.image.name }}"></a></li>
+                                {% endfor %}
                             </ul>
-                        </form>
+                        </div>
+                        <div class="tab-pane" id="tab2">
+                            <form action="/upload/" method="post" enctype="multipart/form-data" class="center-ul">
+                                <ul>
+                                    <li><input id="id_title" maxlength="200" name="title" type="text" placeholder="Image title" /></li>
+                                    <li><input id="id_image" name="image" type="file" accept="image/x-png, image/jpeg" /></li>
+                                    <li><input type="submit" id="btn-submit" value="Upload" class="btn btn-primary btn-small"></li>
+                                </ul>
+                            </form>
+                        </div>
                     </div>
                 </div>
+                <div id="help">
+                    <p class="lead">Help</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, quod, porro, itaque laboriosam et fugit eveniet facere voluptatum sed nihil ea ipsum aspernatur. Dolore sapiente ut odio adipisci odit laborum.</p>
+                </div>
             </div>
-        </div>
-        <div class="span4">
-            <p class="lead">Help</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, quod, porro, itaque laboriosam et fugit eveniet facere voluptatum sed nihil ea ipsum aspernatur. Dolore sapiente ut odio adipisci odit laborum.</p>
+            <div id="step2">
+                <div id="rbox">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1" data-toggle="tab">Apply filter</a></li>
+                        <li><a href="#tab2" data-toggle="tab">Add text</a></li>
+                    </ul>
+                    <div id="tabs" class="tab-content">
+                        <div class="tab-pane active center-ul" id="tab1">
+                            <ul class="thumbnails">
+                                {% with media_list|first as media_file %}
+                                    <li><a href="#"><img class="grayscale" src="{{ MEDIA_URL }}{{ media_file.image.name }}"></a></li>
+                                {% endwith %}
+                            </ul>
+                        </div>
+                        <div class="tab-pane" id="tab2">
+                            <input type="text" placeholder="Up">
+                            <input type="text" placeholder="Down">
+                        </div>
+                    </div>
+                </div>
+                <div id="help">
+                    <p class="lead">Help</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, quod, porro, itaque laboriosam et fugit eveniet facere voluptatum sed nihil ea ipsum aspernatur. Dolore sapiente ut odio adipisci odit laborum.</p>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

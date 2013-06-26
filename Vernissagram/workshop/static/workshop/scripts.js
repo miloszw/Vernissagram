@@ -23,6 +23,18 @@ $(document).ready(function() {
     }, function() {
         $('#lbox #ok-btn').stop().fadeOut('fast');
     });
+    
+    $step2 = $('#mainContainer #step2').detach();
+    $('#lbox #ok-btn').click(function(e) {
+        e.preventDefault();
+        $('#mainContainer #step1').css('position','absolute');
+        $('#mainContainer #step1').animate({right:'-90%'}, 500, function() {
+            $('#mainContainer #rightRow').html($step2);
+            $('#mainContainer #step2').fadeIn();
+        });
+        $('ul.breadcrumb > li#step1').removeClass('active');
+        $('ul.breadcrumb > li#step2').addClass('active');
+    });
 });
 
 // $(document).ready(function() {

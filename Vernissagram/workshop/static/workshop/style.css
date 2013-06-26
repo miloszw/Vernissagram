@@ -1,29 +1,45 @@
+#mainContainer #step2 {
+    display: none;
+}
+
+#mainContainer #step1, #rightRow {
+    display: inline-block;
+}
+
+#help {
+    display: inline-block;
+    width: 200px;
+    text-align: justify;
+    right: 0;
+}
+
 #rbox {
-    width: 400px;
-    height: 160px;
+    width: 430px;
+    height: 300px;
     display: inline-block;
     vertical-align: top;
 }
 
 #lbox {
     display: inline-block;
+    vertical-align: top;
 }
 
 #lbox #img-large {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
 }
 
 #lbox #ok-btn {
     position: relative;
-    width: 140px;
+    width: 180px;
     bottom: 61px;
     margin: 0 auto;
     display: block;
 }
 
 #tabs {
-    height: 150px;
+    height: 250px;
     overflow: scroll;
     padding-left: 5px;
 }
@@ -33,9 +49,9 @@
 }
 
 .highlighted {
-    box-shadow: 0 0 10px rgba(281, 203, 138, 1);
-    border: 3px solid rgba(81, 203, 38, 1);
-    margin-top: -3px;
+    box-shadow: 0 0 10px rgb(232, 208, 105);
+    border: 2px solid rgb(232, 208, 105);
+    margin-top: -2px;
 }
 
 .thumbnails a {
@@ -58,6 +74,14 @@ ul.thumbnails {
 
 .tab-content {
     position: relative;
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 10px 0;
+    background-color: rgba(233,233,233,0.2); 
+}
+
+ul.nav-tabs {
+    margin-bottom: 0;
+    border: 0;
 }
 
 .center-ul ul {
@@ -77,8 +101,6 @@ form input:not(#btn-submit) {
 
 form #btn-submit {
     width: 285px;
-    position: absolute;
-    bottom: 0;
     left: 0;
     right: 0;
     margin: 0 auto;
